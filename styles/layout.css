@@ -17,7 +17,7 @@
 
 .image-box {
   background-color: gray;
-  margin: 5vh 10vw 5vh 10vw;
+  margin: 0vh 10vw 5vh 10vw;
   width: 80vw;
   height: 45vh;
   display: flex;
@@ -71,8 +71,12 @@
 
 /* ---------SECTIONS AND DIVS----------*/
 
+section.about-section {
+  padding-top: 20px;
+}
+
 .title-background {
-  background-color: #E68244;
+  background-color: #EF9B46;
   width: 100vw;
   height: 60px;
   margin-top: 0px;
@@ -91,6 +95,15 @@
     line-height: 0px;
 }
 
+.imageOverlay {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
 
 /* -------------media queries---------- */
 @media screen and (min-width:690px){
@@ -105,4 +118,11 @@
     padding-bottom: 10vh;
     padding-top: 2vh;
   }
+
+  .nav-title {
+    float: right;
+    width: 100%;
+    margin-right: 5%;
+  }
+
 }

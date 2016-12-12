@@ -7,6 +7,19 @@ $(document).ready(function(){
   });
 });
 
+function menuHighlight(){
+  $('.nav-item a').on('click', function(){
+    $('.nav-item').removeClass('active');
+  });
+
+  $('.nav-item a').on('click', function(){
+    var href = $(this).attr('href');
+    console.log(href);
+    $('li.nav-item a[href="' + href + '"]').parent().addClass('active');
+  });
+};
+
+
 // menu functionality: on click hide other sections
 postsViewer.navigationFilter = function(){
   $('.main-nav').on('click', '.nav-item',function(){
@@ -23,9 +36,15 @@ postsViewer.navigationFilter = function(){
 postsViewer.renderToPage = function(){
   Post.allPosts.forEach(function(blogPostObj){
     $('#posts').append(blogPostObj.toHtml('#postsTemplate'));
-    console.log(blogPostObj);
+    // console.log(blogPostObj);
   });
   postsViewer.navigationFilter();
 };
 
+menuHighlight();
 Post.fetchAll();
+
+// this.forEach(function(itemInArray) {
+//   if(predicateFunction(itemInArray)){
+//     results.push(itemInArray);}
+// });
